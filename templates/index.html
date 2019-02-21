@@ -1,10 +1,24 @@
-{% extends "base.html" %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Part</title>
+</head>
+<body style="background-color: whitesmoke">
 
-{% block content %}
-    <form action="" method="post">
-      Enter your  link:<br>
-      <input type="text" name="link" ><br>
-      <input type="download" value="download">
-    </form>
+         <h1>Enter youtube Link</h1>
 
-{% endblock %}
+        <form class="url_part" action="" method="post">
+          {% csrf_token %}
+          URL: <input type="text" name="url"><br>
+              <input type="submit" value="Download" name="download">
+        </form>
+
+        <form class="button_1" action="{% url 'stories' %}">
+            <input type="submit" value="stories" name="story">
+        </form>
+
+</body>
+</html>

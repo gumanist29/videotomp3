@@ -15,7 +15,7 @@ class Utuber(models.Model):
         check.save()
 
     def download_mp3(self, song_url):
-        ydl_opts = {
+        udl_opts = {
             'format': 'bestaudio/best',
             'noplaylist' : True,
             'postprocessors': [
@@ -25,6 +25,6 @@ class Utuber(models.Model):
             ],
         }
 
-        with youtube_dl.YoutubeDL(ydl_opts) as dl:
+        with youtube_dl.YoutubeDL(udl_opts) as dl:
             dl.download([song_url])
 

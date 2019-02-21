@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main part</title>
+    <title>Second Part</title>
 </head>
-<body style="background-color: dimgray">
-    {% block content %}
-
-    {% endblock %}
+<body style="background-color:whitesmoke">
+    <h1>Story  of youtube Link</h1>
+    {% if all_link_list %}
+        <ul>
+            {% for story in all_link_list %}
+            <li>{{ story.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No stories are available</h2>
+    {% endif %}
 </body>
 </html>
