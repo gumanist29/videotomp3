@@ -1,0 +1,3 @@
+SECRET_KEY = '#h_934ow1^f&jl@x)zem53j=jh6y3%c+!wgc0@95#xs%6*cx9e'
+
+DEBUG = True
