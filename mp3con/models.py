@@ -10,10 +10,6 @@ class Utuber(models.Model):
     def __str__(self):
         return self.name
 
-    def save_db(self, urlss):
-        check = Utuber(name=urlss)
-        check.save()
-
     def download_mp3(self, song_url):
         udl_opts = {
             'format': 'bestaudio/best',
