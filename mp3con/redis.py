@@ -8,10 +8,6 @@ from task22 import settings
 
 
 def download_mp3(song_url):
-    response = requests.get(song_url)
-    if not response.status_code == 200:
-        return HttpResponse("failed")
-
     udl_opts = {
         'format': 'bestaudio/best',
         'noplaylist' : True,
@@ -26,4 +22,3 @@ def download_mp3(song_url):
     with youtube_dl.YoutubeDL(udl_opts) as dl:
         os.chdir(settings.MEDIA_DIR)
         dl.download([song_url])
-

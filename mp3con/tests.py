@@ -5,8 +5,8 @@ from django.urls import reverse
 
 class UtuberPageTests(TestCase):
 
-    def test_about_page_status_code(self):
-        response = self.client.get('/base/')
+    def test_url_code(self):
+        response = self.client.get('urls')
         self.assertEquals(response.status_code, 200)
 
     def test_view_url_by_name(self):
@@ -14,10 +14,10 @@ class UtuberPageTests(TestCase):
         self.assertEquals(response.status_code, 200)
 
     def test_view_uses_correct_template(self):
-        response = self.client.get(reverse('base'))
+        response = self.client.get(reverse('/templates/base/'))
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html')
 
-    def test_about_page_does_not_contain_incorrect_html(self):
-        response = self.client.get('/')
+    def test_error_html(self):
+        response = self.client.get('urls')
         self.assertNotContains(response, 'anywhere i should not be in page.')
