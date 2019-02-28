@@ -1,4 +1,3 @@
-from django.test import TestCase
 from django.urls import reverse
 
 
@@ -21,4 +20,3 @@ class UtuberPageTests(TestCase):
     def test_error_html(self):
         response = self.client.get('urls')
         self.assertNotContains(response, 'anywhere i should not be in page.')
-

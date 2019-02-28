@@ -2,3 +2,7 @@
 venv/
 .idea.idea
 venv
+__pycache__
+.pyc.idea
+venv
+.idea
