@@ -7,9 +7,10 @@
 <body style="background-color:whitesmoke">
     <h1>Story  of youtube Link</h1>
     {% if all_link_list %}
+        {% csrf_token %}
         <ul>
             {% for story in all_link_list %}
-            <a href="">{{ story.name }}</a><br>
+                <a href="{{ story.name }}">{{ story.name }}</a><br>
             {% endfor %}
         </ul>
     {% else %}
