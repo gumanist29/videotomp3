@@ -12,7 +12,7 @@ class HomeView(generic.TemplateView):
     def post(self, request):
         urls = request.POST.get('url')
         download_mp3(urls)
-        new_utuber = Utuber(name = urls)
+        new_utuber = Utuber(name=urls)
         new_utuber.save()
         return HttpResponse("Downloaded check in your Folder")
 
