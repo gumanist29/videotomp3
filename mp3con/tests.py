@@ -1,13 +1,13 @@
 from unittest import TestCase
 
 from django.urls import reverse
-
+from .redis import download_mp3
 
 
 class UtuberPageTests(TestCase):
 
     def test_url_code(self):
-        response = self.client.get('urls')
+        response = self.client.get('index')
         self.assertEquals(response.status_code, 200)
 
     def test_view_url_by_name(self):
@@ -20,5 +20,5 @@ class UtuberPageTests(TestCase):
         self.assertTemplateUsed(response, 'base.html')
 
     def test_error_html(self):
-        response = self.client.get('urls')
+        response = self.client.get('templates')
         self.assertNotContains(response, 'anywhere i should not be in page.')

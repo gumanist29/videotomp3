@@ -1,15 +1,5 @@
 <html>
 <head>
-    <style>
-        h2{
-            margin-left: 55%;
-        }
-        .button_2{
-            margin-left: 65%;
-            margin-bottom: 130%;
-        }
-
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -19,12 +9,12 @@
 <body style="background-color: whitesmoke">
 
          <h1>Enter youtube Link</h1>
-        <form class="url_part" action="" method="post">
+        <form class="url_part" action="" method="post">{% csrf_token %}
           URL: <input type="text" name="url"><br>
               <input type="submit" value="Download" name="download">
         </form>
 
-        <form class="button_1" action="{% url 'stories' %}">
+        <form class="button_1" action="{% url 'stories' %}">{% csrf_token %}
             <input type="submit" value="stories" name="story">
         </form>
 

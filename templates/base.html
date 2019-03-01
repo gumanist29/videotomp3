@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'static/main.css' %}">
     <meta charset="UTF-8">
     <title>Second Part</title>
 </head>
@@ -9,7 +11,7 @@
     {% if all_link_list %}
         <ul>
             {% for story in all_link_list %}
-                <a href="{{ story.name }}">{{ story.name }}</a><br>
+                <li><a href="{{ story.name }}">{{ story.name }}</a></li><br>
             {% endfor %}
         </ul>
     {% else %}
