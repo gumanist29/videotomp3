@@ -3,12 +3,11 @@ from django.http import HttpResponse
 from .models import Utuber
 from django.views import generic
 from .redis import download_mp3
-from django.views.decorators.csrf import csrf_exempt
+
 
 class HomeView(generic.TemplateView):
     def get(self, request):
         return render(request,'index.html')
-    @csrf_exempt
     def post(self, request):
         urls = request.POST.get('url')
         if urls!=200:

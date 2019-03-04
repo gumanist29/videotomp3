@@ -6,6 +6,9 @@ from .redis import download_mp3
 
 class UtuberPageTests(TestCase):
 
+    def test_url_representation(self):
+        self.fail("TODO Test incomplete")
+
     def test_url_code(self):
         response = self.client.get('index')
         self.assertEquals(response.status_code, 200)

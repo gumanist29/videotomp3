@@ -1,16 +1,19 @@
 <html>
 <head>
+    {% load static %}
+    <link rel="stylesheet"  href="{% static '/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Main Part</title>
 </head>
-<body style="background-color: whitesmoke">
+<body>
 
          <h1>Enter youtube Link</h1>
         <form class="url_part" action="" method="post">{% csrf_token %}
-          URL: <input type="text" name="url"><br>
+          URL: <input type="text" name="url">
               <input type="submit" value="Download" name="download">
         </form>
 
