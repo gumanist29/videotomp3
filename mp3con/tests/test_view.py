@@ -1,11 +1,18 @@
-import unittest
+from django.contrib.sites import requests
+from mock import call, patch
+from requests import request
 
-class TestStringMethods(unittest.TestCase):
-
-    def test_url_code(self):
-        response = self.client.post('url')
-        self.assertEquals(response.status_code, 200)
+from mp3con.views import HomeView
 
 
-if __name__ == '__main__':
-    unittest.main()
+@patch.object(requests,'get')
+def test_response_verify(self, mock_requests):
+
+    mock_requests.get.return_value.status_code = 200
+
+    response = HomeView().post(request, {'urls': 'some_url'})
+
+    self.assertEqual(
+        mock_requests.get.call_args_list,
+        [call('some_url', params={'verify': 'hello'})]
+    )
