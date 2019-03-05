@@ -10,7 +10,6 @@ class HomeView(generic.TemplateView):
         return render(request,'index.html')
     def post(self, request):
         urls = request.POST.get('url')
-<<<<<<< HEAD
         if urls!=200:
             return HttpResponse("Not right link")
         else:
@@ -18,12 +17,11 @@ class HomeView(generic.TemplateView):
             new_utuber = Utuber(name = urls)
             new_utuber.save()
             return HttpResponse("Downloaded check in your Folder")
-=======
         download_mp3(urls)
         new_utuber = Utuber(name=urls)
         new_utuber.save()
         return HttpResponse("Downloaded check in your Folder")
->>>>>>> master
+
 
 
 
