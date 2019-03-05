@@ -1,7 +1,5 @@
 from __future__ import unicode_literals
 import youtube_dl
-import requests
-from django.http import HttpResponse, Http404
 import os
 
 from task22 import settings
