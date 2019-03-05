@@ -17,13 +17,6 @@ class HomeView(generic.TemplateView):
             new_utuber = Utuber(name = urls)
             new_utuber.save()
             return HttpResponse("Downloaded check in your Folder")
-        download_mp3(urls)
-        new_utuber = Utuber(name=urls)
-        new_utuber.save()
-        return HttpResponse("Downloaded check in your Folder")
-
-
-
 
 def stories(request):
     all_link_list = Utuber.objects.all()
