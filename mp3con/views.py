@@ -10,13 +10,14 @@ class HomeView(generic.TemplateView):
         return render(request,'index.html')
 
     def post(self, request):
-        urls = request.POST.get('url')
-        ans = download_mp3(urls)
-        if ans:
-            new_utuber = Utuber(name=urls)
-            new_utuber.save()
-            return HttpResponse("Downloaded check in your Folder")
-        return HttpResponse("not right link")
+        url = request.POST.get('url')
+        msg = download_mp3(url)
+        if msg:
+            return HttpResponse(msg)
+        Utuber.objects.create(name=url)
+        # new_utuber.save()
+        return HttpResponse("Downloaded check in your Folder")
+
 
 
 
