@@ -1,21 +1,21 @@
-import unittest
-from django.test import Client
-from mp3con.models import Utuber
-from
-
-class SimpleTest(unittest.TestCase):
-    def setUp(self):
-        self.client = Client()
-
-    def test_details(self):
-        response = self.client.get('/stories/')
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context['stories']), 10)
-
-    def testread(self):
-        request = Utuber.objects.all()
-        context = {'all_link_list': all_link_list}
-        self.assertEqual(len(request.context) )
+# import unittest
+# from django.test import Client
+# from mp3con.models import Utuber
+#
+#
+# class SimpleTest(unittest.TestCase):
+#     def setUp(self):
+#         self.client = Client()
+#
+#     def test_details(self):
+#         response = self.client.get('/stories/')
+#         self.assertEqual(response.status_code, 200)
+#         self.assertEqual(len(response.context['stories']), 10)
+#
+#     def testread(self):
+#         request = Utuber.objects.all()
+#         context = {'all_link_list': all_link_list}
+#         self.assertEqual(len(request.context) )
 
 # #
 # #

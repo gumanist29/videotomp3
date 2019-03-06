@@ -5,7 +5,6 @@ from mp3con.redis import download_mp3
 
 
 from django.test import TestCase
-from mp3con.models import Utuber
 
 
 class UtuberTestCase(TestCase):
@@ -15,21 +14,21 @@ class UtuberTestCase(TestCase):
         # mocked_fun.download_mp3.asser_called_once()
         #resp = self.client.post(reverse('mp3con:index'), data={'url': y_url})
         resp = self.client.post('mp3con:index', data={'url': y_url})
-        self.assertEqual(200, resp.status_code)
-        self.assertContains("Downloaded check in your Folder")
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "Downloaded check in your Folder")
 
 
 
-    #
-    # def test_list_of_stories(self):
-    #         url = reverse('templates:base')
-    #         response = self.client.get(url)
-    #         self.assertEqual(response.status_code, 200)
-    #
-    #
-    #
-    # def test_index(self):
-    #         url = reverse('templates:text')
-    #         response = self.client.get(url)
-    #         self.assertEqual(response.status_code, 200)
+
+    def test_list_of_stories(self):
+            url = reverse('base')
+            response = self.client.get(url)
+            self.assertEqual(response.status_code, 200)
+
+
+
+    def test_index(self):
+            url = reverse('index')
+            response = self.client.get(url)
+            self.assertEqual(response.status_code, 200)
 
