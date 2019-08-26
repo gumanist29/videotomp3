@@ -1,40 +1,24 @@
 <html>
 <head>
-    <style>
-        h2{
-            margin-left: 55%;
-        }
-        .button_2{
-            margin-left: 65%;
-            margin-bottom: 130%;
-        }
-
-    </style>
+    {% load static %}
+    <link rel="stylesheet"  href="{% static '/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Main Part</title>
 </head>
-<body style="background-color: whitesmoke">
+<body>
 
          <h1>Enter youtube Link</h1>
-
-        <form class="url_part" action="" method="post">
-          URL: <input type="text" name="url"><br>
+        <form class="url_part" action="" method="post">{% csrf_token %}
+          URL: <input type="text" name="url">
               <input type="submit" value="Download" name="download">
         </form>
 
-        <form class="button_1" action="{% url 'stories' %}">
+        <form class="button_1" action="{% url 'stories' %}">{% csrf_token %}
             <input type="submit" value="stories" name="story">
         </form>
-{##}
-{#         <h2>If you want get link of mp3 in email adress </h2>#}
-{#         <form class="button_2" action="{% url 'link' %}">#}
-{#             URL: <input type="text" name="url">#}
-{#             <p>Write down your email adress</p>#}
-{#             E-MAIL: <input type="text" name="email">#}
-{#             <input type="submit" value="submit" name="as">#}
-{#         </form>#}
 </body>
 </html>

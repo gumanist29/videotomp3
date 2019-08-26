@@ -1,5 +1,15 @@
 .env
+<<<<<<< HEAD
+venv/
+.idea.idea
+venv
 __pycache__
 .pyc.idea
 venv
 .idea
+=======
+__pycache__
+.pyc.idea
+venv
+.idea
+>>>>>>> master
